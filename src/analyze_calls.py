@@ -28,4 +28,3 @@ operators = preparator.Preparator.get("operators").prepare(
 enr = enricher.Enricher()
 presenter.Presenter.get("csv").present(
     enr.enrich(calls, operators), args.output)
-
