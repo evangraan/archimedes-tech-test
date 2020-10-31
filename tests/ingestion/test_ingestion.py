@@ -57,4 +57,3 @@ def test_ingest_operator_data(ingestion):
     assert type(operators[1]['attributes']) is dict
     assert operators[1]['attributes']['prefix'] == "4000"
     assert operators[1]['attributes']['operator'] == "O2"
-

@@ -1,0 +1,38 @@
+@startuml
+allow_mixing
+sprite $businessProcess [16x16/16] {
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFF0FFFFF
+FFFFFFFFFF00FFFF
+FF00000000000FFF
+FF000000000000FF
+FF00000000000FFF
+FFFFFFFFFF00FFFF
+FFFFFFFFFF0FFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFF
+}
+
+
+rectangle " Call analysis process" <<$businessProcess>> {
+ object JSON
+ rectangle "Ingestion" <<$businessProcess>> as ingestion
+ JSON -> ingestion
+ rectangle "Preparation" <<$businessProcess>> as preparation
+ rectangle "Enrichment" <<$businessProcess>> as enrichment
+ rectangle "Presentation" <<$businessProcess>> as presentation
+ ingestion -> preparation
+ preparation -> enrichment
+ enrichment -> presentation
+
+ object CSV
+ presentation -> CSV
+}
+@enduml
+

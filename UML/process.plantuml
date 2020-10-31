@@ -1,0 +1,24 @@
+@startuml
+start
+:Requirements;
+:Prototype;
+:BDD features &
+Unit test specifications;
+if (Done?) then (yes)
+  :Support;
+  :Celebrate;
+else (no)
+  if (Approved?) then (yes)
+    :Document;
+    :deploy;
+  else (no)
+    :Red;
+    :Green;
+    :Refactor;
+    :Validate;
+  endif
+endif
+
+end
+@enduml
+

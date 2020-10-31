@@ -13,4 +13,3 @@ class Enricher:
         df_merged = pd.merge(df_calls, df_operators, how='outer', on='prefix')
         df_merged.sort_values(by=['timestamp'], inplace=True)
         return df_merged
-

@@ -20,4 +20,3 @@ class JSONIngestor(IIngestor):
         if data_key:
             return loaded[data_key]
         return loaded
-

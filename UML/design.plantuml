@@ -1,0 +1,45 @@
+@startuml
+class Ingestor{
+  {method} get(ingestion_format)
+}
+interface IIngestor{
+  {method} ingest(path, data_key)
+}
+class JSONIngestor{ 
+  {method} ingest(path, data_key)
+}
+JSONIngestor <|-- IIngestor
+class Preparator{
+  {method} get(preparation)
+}
+interface IPreparator{
+  {method} prepare(data)
+}
+class CallsPreparator{
+  {method} prepare(calls_data)
+}
+class OperatorsPreparator{
+  {method} prepare(operators_data)
+}
+CallsPreparator <|-- IPreparator
+OperatorsPreparator <|-- IPreparator
+class Presenter{
+  {method} get(presentation_format)
+}
+interface IPresenter{
+  {method} present(data_frame, path)
+}
+class CSVPresenter{
+  {method} present(data_frame, path)
+}
+CSVPresenter <|-- IPresenter
+
+class Enricher{
+  {method} enrich(calls, operators)
+}
+Ingestor - JSONIngestor : creates >
+Preparator - CallsPreparator : creates >
+Preparator - OperatorsPreparator : creates >
+Presenter - CSVPresenter : creates >
+@enduml
+

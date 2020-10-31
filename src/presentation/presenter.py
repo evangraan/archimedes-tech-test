@@ -44,4 +44,3 @@ class CSVPresenter(IPresenter):
                          entry['number'],
                          entry['attributes']['operator'],
                          entry['riskScore']])
-

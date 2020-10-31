@@ -42,4 +42,3 @@ def test_sorted(export):
     df_output = pd.read_csv("output.csv")
     assert df_output.iloc[0]['date'] == "2018-02-20"
     assert df_output.iloc[49]['date'] == "2020-09-17"
-

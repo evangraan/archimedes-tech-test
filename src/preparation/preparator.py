@@ -113,4 +113,3 @@ class CallsPreparator(IPreparator):
     def _is_green_listed(self, entry: dict) -> bool:
         return 'greenList' in entry['attributes'] and \
                entry['attributes']['greenList'] is True
-

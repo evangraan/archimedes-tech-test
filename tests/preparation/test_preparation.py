@@ -107,4 +107,3 @@ def test_operator_prefix():
     prep = preparator.Preparator.get("operators")
     operators = prep.prepare(operators)["operators"]
     assert operators[0]['prefix'] == '3000'
-

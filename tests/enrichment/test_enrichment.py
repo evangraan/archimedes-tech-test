@@ -34,4 +34,3 @@ def test_sort(enrich):
     output = enrich['output']
     assert output.iloc[0]['date'] == '2018-02-20'
     assert output.iloc[49]['date'] == '2020-09-17'
-
