@@ -64,5 +64,6 @@ $ PYTHONPATH=src/ pytest --cov=.
 ## Style
 Code style was checked using pycodestyle
 ```
-$ ./style.sh
+$ pycodestyle --show-source --show-pep8 src
+$ pycodestyle --show-source --show-pep8 tests
 ```
